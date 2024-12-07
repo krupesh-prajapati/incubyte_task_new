@@ -29,4 +29,12 @@ describe('stringCalculator', () => {
         expect(stringCalculator("//;\n1;2;3")).toBe(6);
     });
 
+    test('should support custom multi-character delimiters', () => {
+        expect(stringCalculator("//[***]\n1***2***3")).toBe(6);
+    });
+
+    test('should support multiple custom delimiters', () => {
+        expect(stringCalculator("//[*][%]\n1*2%3")).toBe(6);
+    });
+
 });
