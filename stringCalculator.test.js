@@ -40,4 +40,12 @@ describe('stringCalculator', () => {
     test('should handle multiple multi-character delimiters', () => {
         expect(stringCalculator("//[***][%%%]\n1***2%%%3")).toBe(6);
     });
+
+    test('should handle edge case with no numbers', () => {
+        expect(stringCalculator("//[***]\n")).toBe(0);
+    });
+
+    test('should handle edge case with empty delimiters', () => {
+        expect(stringCalculator("//[]\n1")).toBe(1);
+    });
 });
