@@ -14,7 +14,7 @@ function stringCalculator(str) {
             if (parseInt(ele) < 0) {
                 nagativeNums.push(ele)
             } else {
-                res += parseInt(ele)
+                res += (parseInt(ele) < 1001 ? parseInt(ele) : 0)
             }
         }
     })

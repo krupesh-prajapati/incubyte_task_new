@@ -17,4 +17,8 @@ describe('stringCalculator', () => {
         expect(stringCalculator("-1,-2,3")).toBe("negative numbers not allowed -1,-2");
     });
 
+    test('should ignore numbers greater than 1000', () => {
+        expect(stringCalculator("2,1001")).toBe(2);
+    });
+
 });
