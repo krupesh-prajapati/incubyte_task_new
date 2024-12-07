@@ -9,7 +9,7 @@ describe('stringCalculator', () => {
         expect(stringCalculator("1,2,3")).toBe(6);
     });
 
-    test('should return error message for negative numbers', () => {
+    test('should list all negative numbers in error message', () => {
         expect(stringCalculator("1,-2,3")).toBe("negative numbers not allowed -2");
     });
 
@@ -19,6 +19,14 @@ describe('stringCalculator', () => {
 
     test('should ignore numbers greater than 1000', () => {
         expect(stringCalculator("2,1001")).toBe(2);
+    });
+
+    test('should handle newline as a delimiter', () => {
+        expect(stringCalculator("1\n2,3")).toBe(6);
+    });
+
+    test('should support custom character delimiter', () => {
+        expect(stringCalculator("//;\n1;2;3")).toBe(6);
     });
 
 });
