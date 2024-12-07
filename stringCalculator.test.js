@@ -37,4 +37,7 @@ describe('stringCalculator', () => {
         expect(stringCalculator("//[*][%]\n1*2%3")).toBe(6);
     });
 
+    test('should handle multiple multi-character delimiters', () => {
+        expect(stringCalculator("//[***][%%%]\n1***2%%%3")).toBe(6);
+    });
 });
